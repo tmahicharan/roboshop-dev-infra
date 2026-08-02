@@ -1,0 +1,19 @@
+data "aws_ssm_parameter" "backend_lb_sg_id" {
+  name =  "/${var.project}/${var.environment}/backend_lb-sg-id" #
+}
+
+data "aws_ssm_parameter" "bastion_sg_id" {
+  name =  "/${var.project}/${var.environment}/bastion-sg-id"
+}
+
+data "aws_ssm_parameter" "public_subnet_id" {
+  name =  "/${var.project}/${var.environment}-public-subnet-id"
+}
+
+data "aws_ssm_parameter" "frontend_sg_id" {
+  name =  "/${var.project}/${var.environment}/frontend-sg-id" #/roboshop/dev/frontend-sg-id
+}
+
+data "aws_ssm_parameter" "frontend_lb_sg_id" {
+  name =  "/${var.project}/${var.environment}/frontend_lb-sg-id" # /roboshop/dev/frontend_lb-sg-id
+}
