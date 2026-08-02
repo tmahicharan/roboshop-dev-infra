@@ -9,6 +9,6 @@ locals {
   }
   common_name="${var.project}-${var.environment}"
   
-  database_subnet_ids=split("," , data.aws_ssm_parameter.database_subnet_ids.value)[0]
+  database_subnet_ids=split("," , data.aws_ssm_parameter.database_subnet_ids.value)
 
 }
