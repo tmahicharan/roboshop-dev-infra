@@ -1,5 +1,5 @@
 locals {
-  ami_id=data.aws_ami.aws_ami.id
+  ami_id=data.aws_ami.joindevops.id
   sg_id=data.aws_ssm_parameter.mongodb_sg_id.value
 
   common_tags={
