@@ -19,5 +19,9 @@ data "aws_ami" "joindevops" {
 }
 
 data "aws_ssm_parameter" "database_subnet_ids" {
-  name = "/${var.project}/${var.environment}-database-subnet-id" #/roboshop/dev-database-subnet-id
+  name = "/${var.project}/${var.environment}-database-subnet-id" #/roboshop/dev-database-subnet-id #/roboshop/dev/mongodb-sg-id
+}
+
+data "aws_ssm_parameter" "mongodb_sg_id" {
+  name = "/${var.project}/${var.environment}/mongodb-sg-id"  #/roboshop/dev/mongodb-sg-id
 }
