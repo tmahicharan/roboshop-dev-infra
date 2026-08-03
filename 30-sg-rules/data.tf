@@ -26,6 +26,6 @@ data "aws_ssm_parameter" "redis_sg_id" {
   name =  "/${var.project}/${var.environment}/redis-sg-id" # /roboshop/dev/redis-sg-id  
 }
 
-data "aws_ssm_parameter" "mysql_sg_id" {
-  name =  "/${var.project}/${var.environment}/mysql-sg-id" # /roboshop/dev/mysql-sg-id  
+data "aws_ssm_parameter" "rabbitmq_sg_id" {
+  name =  "/${var.project}/${var.environment}/rabbitmq-sg-id" # /roboshop/dev/rabbitmq-sg-id  
 }
