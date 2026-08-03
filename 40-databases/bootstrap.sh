@@ -8,7 +8,7 @@ REPO_DIR="/opt/roboshop/ansible"
 ANSIBLE_DIR="ansible-roboshop-roles-tf"
 
 mkdir -p $REPO_DIR
-mkdir -p/var/log/roboshop
+mkdir -p /var/log/roboshop
 touch ansible.log
 
 cd $REPO_DIR
@@ -23,4 +23,4 @@ if [ -d "$ANSIBLE_DIR" ]; then
         git clone $REPO_URL
         cd $ANSIBLE_DIR
 fi
-ansible-playbook -e component=$component main.yaml &>> /var/log/roboshop/ansible.log
+ansible-playbook -e component=$component main.yaml 
