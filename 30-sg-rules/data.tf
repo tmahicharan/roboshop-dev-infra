@@ -21,3 +21,7 @@ data "aws_ssm_parameter" "frontend_lb_sg_id" {
 data "aws_ssm_parameter" "mongodb_sg_id" {
   name =  "/${var.project}/${var.environment}/mongodb-sg-id" # /roboshop/dev/mongodb-sg-id  
 }
+
+data "aws_ssm_parameter" "redis_sg_id" {
+  name =  "/${var.project}/${var.environment}/redis-sg-id" # /roboshop/dev/redis-sg-id  
+}

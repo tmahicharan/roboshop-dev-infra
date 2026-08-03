@@ -1,7 +1,7 @@
 locals {
   ami_id=data.aws_ami.joindevops.id
-  sg_id=data.aws_ssm_parameter.mongodb_sg_id.value #/roboshop/dev/mongodb-sg-id
-
+  mongodb_sg_id=data.aws_ssm_parameter.mongodb_sg_id.value #/roboshop/dev/mongodb-sg-id
+  redis_sg_id=data.aws_ssm_parameter.redis_sg_id.value #/roboshop/dev/redis-sg-id
   common_tags={
     terraform= "true"
     project= var.project

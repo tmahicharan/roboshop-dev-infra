@@ -6,4 +6,5 @@ locals {
   frontend=data.aws_ssm_parameter.frontend_sg_id.value
   frontend_lb=data.aws_ssm_parameter.frontend_lb_sg_id.value
   mongodb=data.aws_ssm_parameter.mongodb_sg_id.value
+  redis=data.aws_ssm_parameter.redis_sg_id.value
 }

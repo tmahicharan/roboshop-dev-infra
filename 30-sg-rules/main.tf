@@ -37,3 +37,13 @@ resource "aws_security_group_rule" "mongodb-bastion" {
   source_security_group_id= local.bastion
   security_group_id = local.mongodb
 }
+
+# redis to bastion
+resource "aws_security_group_rule" "redis-bastion" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  source_security_group_id= local.bastion
+  security_group_id = local.redis
+}

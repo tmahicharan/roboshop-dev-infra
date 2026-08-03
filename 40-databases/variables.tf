@@ -10,3 +10,8 @@ variable "mongodb_tags" {
     type= map
     default ={} 
 }
+
+variable "redis_tags" {
+    type= map
+    default ={} 
+}
