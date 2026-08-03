@@ -1,6 +1,6 @@
 #!/bin/bash
 component=$1
-dnf install ansible -y
+dnf install ansible git -y
 # ansible-pull -U https://github.com/tmahicharan/ansible-roboshop-roles-tf.git -e component=$component main.yaml
 
 REPO_URL="https://github.com/tmahicharan/ansible-roboshop-roles-tf.git"
