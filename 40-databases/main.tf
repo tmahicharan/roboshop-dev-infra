@@ -22,20 +22,20 @@ resource "terraform_data" "mongodb" {
     user     = "ec2-user"
     password = "DevOps321"
     host     = aws_instance.mongodb.private_ip
-}
+  }
 
-provisioner "file" {
+ provisioner "file" {
   source      = "bootstrap.sh"
-  destination = "tmp/bootstrap.sh"
-}
+  destination = "/tmp/bootstrap.sh"
+ }
 
-provisioner "remote-exec" {
+ provisioner "remote-exec" {
   inline = [
     "chmod +x /tmp/bootstrap.sh",
-    "sudo sh /tmp/bootstrap.sh"
+    "sudo sh /tmp/bootstrap.sh mongodb"
   ]
 
-}
+ }
 }
 
 
