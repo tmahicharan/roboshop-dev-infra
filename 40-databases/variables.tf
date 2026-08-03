@@ -16,7 +16,7 @@ variable "mongodb_tags" {
       default ={} 
   }
 
-  variable "mysql_tags" {
+  variable "rabbitmq_tags" {
       type= map
       default ={} 
   }
