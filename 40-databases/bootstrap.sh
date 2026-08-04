@@ -24,4 +24,4 @@ if [ -d "$ANSIBLE_DIR" ]; then
         git clone $REPO_URL
         cd $ANSIBLE_DIR
 fi
-ansible-playbook -i inventory.ini -e component=$component -e environment=$env main.yaml 
+ansible-playbook -i inventory.ini -e component=$component -e env=$env main.yaml 
