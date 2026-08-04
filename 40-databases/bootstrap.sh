@@ -1,5 +1,6 @@
 #!/bin/bash
 component=$1
+environment=$2
 dnf install ansible git -y
 # ansible-pull -U https://github.com/tmahicharan/ansible-roboshop-roles-tf.git -e component=$component main.yaml
 
@@ -23,4 +24,4 @@ if [ -d "$ANSIBLE_DIR" ]; then
         git clone $REPO_URL
         cd $ANSIBLE_DIR
 fi
-ansible-playbook -i inventory.ini -e component=$component main.yaml 
+ansible-playbook -i inventory.ini -e component=$component -e environment=$environment main.yaml 

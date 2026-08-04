@@ -20,3 +20,8 @@ variable "mongodb_tags" {
       type= map
       default ={} 
   }
+
+  variable "mysql_tags" {
+      type= map
+      default ={} 
+  }

@@ -3,6 +3,7 @@ locals {
   mongodb_sg_id=data.aws_ssm_parameter.mongodb_sg_id.value #/roboshop/dev/mongodb-sg-id
   redis_sg_id=data.aws_ssm_parameter.redis_sg_id.value #/roboshop/dev/redis-sg-id
   rabbitmq_sg_id=data.aws_ssm_parameter.rabbitmq_sg_id.value #/roboshop/dev/rabbitmq-sg-id
+  mysql_sg_id=data.aws_ssm_parameter.mysql_sg_id.value #/roboshop/dev/mysql-sg-id
   common_tags={
     terraform= "true"
     project= var.project
