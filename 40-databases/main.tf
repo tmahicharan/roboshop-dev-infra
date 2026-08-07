@@ -32,7 +32,7 @@ resource "terraform_data" "mongodb" {
  provisioner "remote-exec" {
   inline = [
     "chmod +x /tmp/bootstrap.sh",
-    "sudo sh /tmp/bootstrap.sh mongodb"
+    "sudo sh /tmp/bootstrap.sh mongodb "
   ]
 
  }
@@ -167,10 +167,50 @@ resource "terraform_data" "mysql" {
 }
 
 
+resource "aws_route53_record" "mongodb" {
+  zone_id = var.zone_id 
+  name    = "mongodb-${var.environment}.${var.domain_name}" #mongodb-dev.mahidevops.fun
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.mongodb.private_ip]
+  allow_overwrite= true
+}
 
+resource "aws_route53_record" "redis" {
+  zone_id = var.zone_id 
+  name    = "redis-${var.environment}.${var.domain_name}" #redis-dev.mahidevops.fun
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.redis.private_ip]
+  allow_overwrite= true
+}
 
+resource "aws_route53_record" "rabbitmq" {
+  zone_id = var.zone_id 
+  name    = "rabbitmq-${var.environment}.${var.domain_name}" #rabbitmq-dev.mahidevops.fun
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.rabbitmq.private_ip]
+  allow_overwrite= true
+}
 
+resource "aws_route53_record" "mysql" {
+  zone_id = var.zone_id 
+  name    = "mysql-${var.environment}.${var.domain_name}" #mysql-dev.mahidevops.fun
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.mysql.private_ip]
+  allow_overwrite= true
+}
 
+resource "aws_route53_record" "catalogue" {
+  zone_id = var.zone_id 
+  name    = "catalogue-${var.environment}.${var.domain_name}" #catalogue-dev.mahidevops.fun
+  type    = "A"
+  ttl     = 1
+  records = [aws_instance.catalogue.private_ip]
+  allow_overwrite= true
+}
 
 
 

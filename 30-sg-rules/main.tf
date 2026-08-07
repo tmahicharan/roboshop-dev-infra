@@ -67,3 +67,24 @@ resource "aws_security_group_rule" "mysql-bastion" {
   source_security_group_id= local.bastion
   security_group_id = local.mysql
 }
+
+#catalogue to bastion
+resource "aws_security_group_rule" "catalogue-bastion" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  source_security_group_id= local.bastion
+  security_group_id = local.catalogue
+}
+
+#mongodb to catalogue
+resource "aws_security_group_rule" "mongodb-catalogue" {
+  type              = "ingress"
+  from_port         = 27017
+  to_port           = 27017
+  protocol          = "tcp"
+  source_security_group_id= local.catalogue
+  security_group_id = local.mongodb
+}
+
