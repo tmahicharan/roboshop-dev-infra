@@ -39,3 +39,10 @@ resource "terraform_data" "catalogue" {
 
  }
 }
+
+# # stop the instance for taking image
+# resource "aws_ec2_instance_state" "catalogue_state" {
+#   instance_id = aws_instance.catalogue.id
+#   state       = "stopped"
+#   depends_on = [terraform_data.catalogue]
+# }
