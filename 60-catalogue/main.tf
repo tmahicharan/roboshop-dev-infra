@@ -47,6 +47,7 @@ resource "terraform_data" "catalogue" {
 #   depends_on = [terraform_data.catalogue]
 # }
 
+# # Taking catalogue image
 # resource "aws_ami_from_instance" "catalogue_ami" {
 #   name               = "${local.common_name}-catalogue-ami"
 #   source_instance_id = aws_instance.catalogue.id
