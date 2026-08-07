@@ -131,7 +131,7 @@ resource "aws_autoscaling_group" "catalogue" {
     id      = aws_launch_template.catalogue.id
     version = aws_launch_template.catalogue.latest_version
   }
-  vpc_zone_identifier       = [local.private_subnet_ids]
+  vpc_zone_identifier       = [local.private_subnet_ids[0], local.private_subnet_ids[1]]
   target_group_arns         = [aws_lb_target_group.catalogue.arn]
 
   dynamic "tag" {
@@ -169,7 +169,7 @@ resource "aws_autoscaling_policy" "catalogue_policy" {
 
 #ALB Listener Rule for catalogue service
 resource "aws_lb_listener_rule" "catalogue_rule" {
-  listener_arn = aws_lb_listener.backend_listener.arn
+  listener_arn = aws_lb_listener.backend_listener_arn.arn
   priority     = 10
 
   action {
