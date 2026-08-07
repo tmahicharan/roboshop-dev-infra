@@ -10,5 +10,6 @@ locals {
   common_name="${var.project}-${var.environment}"
   
   private_subnet_ids=split("," , data.aws_ssm_parameter.private_subnet_ids.value)
-
+  vpc_id=data.aws_ssm_parameter.vpc_id.value
+  backend_listener_arn=data.aws_ssm_parameter.backend_listener_arn.value
 }
