@@ -169,7 +169,7 @@ resource "aws_autoscaling_policy" "catalogue_policy" {
 
 #ALB Listener Rule for catalogue service
 resource "aws_lb_listener_rule" "catalogue_rule" {
-  listener_arn = aws_lb_listener.backend_listener_arn.arn
+  listener_arn = local.listener_arn
   priority     = 10
 
   action {
