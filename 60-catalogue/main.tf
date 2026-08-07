@@ -82,7 +82,7 @@ resource "aws_launch_template" "catalogue" {
   name = "${local.common_name}-catalogue"
   image_id = aws_ami_from_instance.catalogue_ami.id
   instance_initiated_shutdown_behavior = "terminate"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   vpc_security_group_ids = [local.sg_id]
   
   #tags attached to the instance created by launch template
