@@ -98,3 +98,12 @@ resource "aws_security_group_rule" "backend-alb-catalogue" {
   security_group_id = local.catalogue
 }
 
+# frontend_alb to laptop
+resource "aws_security_group_rule" "frontend-alb-laptop" {
+  security_group_id = local.frontend_lb
+  cidr_blocks = ["0.0.0.0/0"]
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+}
