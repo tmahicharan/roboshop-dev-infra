@@ -1,6 +1,6 @@
 resource "aws_lb" "frontend_alb" {
   name               = "${local.common_name}-frontend-alb"
-  internal           = true #It tells AWS whether the Load Balancer should be public or private.
+  internal           = false #It tells AWS whether the Load Balancer should be public or private.
   load_balancer_type = "application"
   security_groups    = [local.frontend_lb]
   subnets            = [local.public_subnet_id][0]
