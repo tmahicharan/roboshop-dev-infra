@@ -280,14 +280,14 @@ resource "aws_security_group_rule" "frontend-frontendlb" {
   security_group_id = local.frontend
 }
 
-# frontend to bastion
-resource "aws_security_group_rule" "frontend-bastion" {
-  type              = "ingress"
-  from_port         = 80
-  to_port           = 80
-  protocol          = "tcp"
-  source_security_group_id= local.frontend
-  security_group_id = local.bastion
+# bastion to frontend
+resource "aws_security_group_rule" "frontend-bastion-ssh" {
+  type                     = "ingress"
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+  source_security_group_id = local.bastion
+  security_group_id        = local.frontend
 }
 
 
