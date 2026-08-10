@@ -38,4 +38,22 @@ data "aws_ssm_parameter" "catalogue_sg_id" {
   name =  "/${var.project}/${var.environment}/catalogue-sg-id" # /roboshop/dev/catalogue-sg-id  
 }
 
+data "aws_ssm_parameter" "user_sg_id" {
+  name =  "/${var.project}/${var.environment}/user-sg-id" # /roboshop/dev/user-sg-id  
+}
+
+data "aws_ssm_parameter" "cart_sg_id" {
+  name =  "/${var.project}/${var.environment}/cart-sg-id" # /roboshop/dev/cart-sg-id  
+}
+
+data "aws_ssm_parameter" "shipping_sg_id" {
+  name =  "/${var.project}/${var.environment}/shipping-sg-id" # /roboshop/dev/shipping-sg-id  
+}
+
+data "aws_ssm_parameter" "payment_sg_id" {
+  name =  "/${var.project}/${var.environment}/payment-sg-id" # /roboshop/dev/payment-sg-id  
+}
+
+
+
 

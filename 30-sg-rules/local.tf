@@ -10,5 +10,8 @@ locals {
   rabbitmq=data.aws_ssm_parameter.rabbitmq_sg_id.value
   mysql=data.aws_ssm_parameter.mysql_sg_id.value
   catalogue=data.aws_ssm_parameter.catalogue_sg_id.value
-  
+  user=data.aws_ssm_parameter.user_sg_id.value
+  cart=data.aws_ssm_parameter.cart_sg_id.value
+  shipping=data.aws_ssm_parameter.shipping_sg_id.value
+  payment=data.aws_ssm_parameter.payment_sg_id.value
 }
