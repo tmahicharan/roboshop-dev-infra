@@ -4,3 +4,8 @@ module "components" {
     component= each.key
     rule_priority= each.value.rule_priority
 }
+
+resource "aws_iam_instance_profile" "components" {
+  name = "components"
+  role = "EC2SSMParameterRead"
+}
