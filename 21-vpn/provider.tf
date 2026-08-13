@@ -9,7 +9,7 @@ terraform {
 
   backend "s3" {
     bucket = "mahi-remotestate"
-    key    = "bastion"
+    key    = "OPENVPN"
     region = "us-east-1"
     encrypt= true
     use_lockfile= true

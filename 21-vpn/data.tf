@@ -1,13 +1,13 @@
-data "aws_ssm_parameter" "bastion_sg_id" {
-  name = "/${var.project}/${var.environment}/bastion-sg-id"  #/roboshop/dev/bastion-sg-id
+data "aws_ssm_parameter" "openvpn_sg_id" {
+  name = "/${var.project}/${var.environment}/openvpn-sg-id"  #/roboshop/dev/openvpn-sg-id
 }
-data "aws_ami" "joindevops" {
-  owners      = ["973714476881"]
+data "aws_ami" "openvpn" {
+  owners      = ["677673473487"]
   most_recent = true
 
   filter {
     name   = "name"
-    values = ["Redhat-9-DevOps-Practice"]
+    values = ["OpenVPN Access Server Community Image-fe8020db-*"]
   }
 
   filter {
