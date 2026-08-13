@@ -2,7 +2,7 @@ data "aws_ssm_parameter" "openvpn_sg_id" {
   name = "/${var.project}/${var.environment}/openvpn-sg-id"  #/roboshop/dev/openvpn-sg-id
 }
 data "aws_ami" "openvpn" {
-  owners      = ["677673473487"]
+  owners      = ["679593333241"]
   most_recent = true
 
   filter {
