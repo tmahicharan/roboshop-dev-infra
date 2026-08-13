@@ -354,3 +354,17 @@ resource "aws_security_group_rule" "openvpn-1194" {
   to_port           = 1194
   protocol          = "tcp"
 }
+
+
+# openvpc to components
+resource "aws_security_group_rule" "openvpn-components" {
+  for_each = local.vpn_ingress_rules
+  security_group_id = each.value.sg_id
+  source_security_group_id = local.openvpn
+  type              = "ingress"
+  from_port         = each.value.port
+  to_port           = each.value.port
+  protocol          = "tcp"
+}
+
+
