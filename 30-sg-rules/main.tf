@@ -313,3 +313,44 @@ resource "aws_security_group_rule" "frontend-alb-laptop" {
   to_port           = 443
   protocol          = "tcp"
 }
+
+# open vpn to public
+resource "aws_security_group_rule" "openvpn-public" {
+  security_group_id = local.openvpn
+  cidr_blocks = ["0.0.0.0/0"]
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+}
+
+# openvpc_443
+resource "aws_security_group_rule" "openvpn-443" {
+  security_group_id = local.openvpn
+  cidr_blocks = ["0.0.0.0/0"]
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+}
+
+# openvpc_943
+resource "aws_security_group_rule" "openvpn-943" {
+  security_group_id = local.openvpn
+  cidr_blocks = ["0.0.0.0/0"]
+  type              = "ingress"
+  from_port         = 943
+  to_port           = 943
+  protocol          = "tcp"
+}
+
+
+# openvpc_1194
+resource "aws_security_group_rule" "openvpn-1194" {
+  security_group_id = local.openvpn
+  cidr_blocks = ["0.0.0.0/0"]
+  type              = "ingress"
+  from_port         = 1194
+  to_port           = 1194
+  protocol          = "tcp"
+}

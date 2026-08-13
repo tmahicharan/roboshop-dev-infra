@@ -54,6 +54,10 @@ data "aws_ssm_parameter" "payment_sg_id" {
   name =  "/${var.project}/${var.environment}/payment-sg-id" # /roboshop/dev/payment-sg-id  
 }
 
+data "aws_ssm_parameter" "openvpn_sg_id" {
+  name =  "/${var.project}/${var.environment}/openvpn-sg-id" # /roboshop/dev/payment-sg-id  
+}
+
 
 
 

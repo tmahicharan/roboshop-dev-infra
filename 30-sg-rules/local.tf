@@ -14,4 +14,5 @@ locals {
   cart=data.aws_ssm_parameter.cart_sg_id.value
   shipping=data.aws_ssm_parameter.shipping_sg_id.value
   payment=data.aws_ssm_parameter.payment_sg_id.value
+  openvpn=data.aws_ssm_parameter.openvpn_sg_id.value
 }
