@@ -4,6 +4,10 @@ resource "aws_instance" "instance"{
     vpc_security_group_ids=[local.sg_id]
     subnet_id=local.public_subnet_ids[0]
     iam_instance_profile = aws_iam_instance_profile.BastionTerraformAdmin.name
+    root_block_device {
+        volume_size = 50
+        volume_type = "gp3" # or "gp2", depending on your preference
+    }
     associate_public_ip_address = true  
     user_data = file("bastion.sh")
     tags = merge (
